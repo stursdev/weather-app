@@ -11,7 +11,9 @@ const forecast = (latitude, longitude, callback) => {
             // Code breaks if no coordinates are provided ex. empty string
             callback('Unable to find location. Try different coordinates.', undefined)
         }else{
-            const weather = `It's ${body.current.weather_descriptions[0]}. It is currently ${body.current.temperature} degrees out. It feels like ${body.current.feelslike} degrees out!`
+
+            const weather = `${body.current.weather_descriptions[0]}. It's currently ${body.current.temperature} degrees out. It feels like ${body.current.feelslike} degrees out!`
+            
             callback(undefined, weather )
         }
     })
